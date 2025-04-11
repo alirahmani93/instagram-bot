@@ -7,7 +7,7 @@ import (
     "github.com/swaggo/files"
     "github.com/swaggo/gin-swagger"
     "gorm.io/gorm"
-    _ "github.com/alirahmani93/instagram-bot/docs" // برای Swagger
+    _ "github.com/alirahmani93/instagram-bot/docs"
 )
 
 func SetupRouter(db *gorm.DB) *gin.Engine {

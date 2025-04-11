@@ -16,25 +16,25 @@ import (
 // @host localhost:8080
 // @BasePath /
 func main() {
-    // بارگذاری متغیرهای محیطی
+    // Set Env
     if err := godotenv.Load(); err != nil {
         log.Fatal("Error loading .env file")
     }
 
-    // اتصال به دیتابیس
+    // Database Connection
     database, err := db.NewDatabase()
     if err != nil {
         log.Fatalf("Failed to connect to database: %v", err)
     }
 
-    // تنظیم زمان‌بندی برای مانیتورینگ کامنت‌ها
+    // Scheduler for monitoring  
     scheduler := gocron.NewScheduler(time.UTC)
     scheduler.Every(5).Minutes().Do(func() {
         instagram.MonitorComments(database)
     })
     scheduler.StartAsync()
 
-    // راه‌اندازی سرور Gin
+    // Run Server
     router := api.SetupRouter(database)
     if err := router.Run(":8080"); err != nil {
         log.Fatalf("Failed to run server: %v", err)

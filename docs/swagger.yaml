@@ -1,0 +1,102 @@
+basePath: /
+definitions:
+  models.Client:
+    properties:
+      access_token:
+        type: string
+      created_at:
+        type: string
+      id:
+        type: integer
+      instagram_username:
+        type: string
+      is_active:
+        type: boolean
+      updated_at:
+        type: string
+    type: object
+  models.PostToMonitor:
+    properties:
+      client_id:
+        type: integer
+      created_at:
+        type: string
+      id:
+        type: integer
+      is_active:
+        type: boolean
+      keyword:
+        type: string
+      post_id:
+        type: string
+      predefined_message:
+        type: string
+      updated_at:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: A RESTful API for an Instagram bot that monitors comments and sends
+    predefined DMs.
+  title: Instagram Bot API
+  version: "1.0"
+paths:
+  /clients:
+    post:
+      consumes:
+      - application/json
+      description: Register a new Instagram client with username and access token
+      parameters:
+      - description: Client data
+        in: body
+        name: client
+        required: true
+        schema:
+          $ref: '#/definitions/models.Client'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.Client'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Create a new client
+      tags:
+      - Clients
+  /posts:
+    post:
+      consumes:
+      - application/json
+      description: Add a post to monitor for a specific keyword and send a predefined
+        DM
+      parameters:
+      - description: Post data
+        in: body
+        name: post
+        required: true
+        schema:
+          $ref: '#/definitions/models.PostToMonitor'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.PostToMonitor'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Create a post to monitor
+      tags:
+      - Posts
+swagger: "2.0"

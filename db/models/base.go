@@ -12,7 +12,6 @@ type BaseModel struct {
     UpdatedAt time.Time      `gorm:"autoUpdateTime" json:"updated_at"`
 }
 
-// BeforeCreate برای تنظیم مقدار پیش‌فرض IsActive
 func (b *BaseModel) BeforeCreate(tx *gorm.DB) (err error) {
     if !b.IsActive {
         b.IsActive = true

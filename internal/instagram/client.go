@@ -99,7 +99,7 @@ func MonitorComments(db *gorm.DB) {
             for _, comment := range comments {
                 var sentDM models.SentDM
                 if db.Where("comment_id = ?", comment.ID).First(&sentDM).Error == nil {
-                    continue // پیام قبلاً ارسال شده
+                    continue // Send predifined Message
                 }
 
                 if strings.Contains(comment.Text, post.Keyword) {
