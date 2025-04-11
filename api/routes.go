@@ -2,12 +2,12 @@ package api
 
 import (
     "github.com/gin-gonic/gin"
-    "github.com/ali93rahmani/instagram-bot/api/handlers"
-    "github.com/ali93rahmani/instagram-bot/api/middleware"
+    "github.com/alirahmani93/instagram-bot/api/handlers"
+    "github.com/alirahmani93/instagram-bot/api/middleware"
     "github.com/swaggo/files"
     "github.com/swaggo/gin-swagger"
     "gorm.io/gorm"
-    _ "github.com/ali93rahmani/instagram-bot/docs" // برای Swagger
+    _ "github.com/alirahmani93/instagram-bot/docs" // برای Swagger
 )
 
 func SetupRouter(db *gorm.DB) *gin.Engine {

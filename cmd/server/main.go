@@ -2,12 +2,12 @@ package main
 
 import (
     "log"
-    "github.com/ali93rahmani/instagram-bot/api"
-    "github.com/ali93rahmani/instagram-bot/db"
+    "github.com/alirahmani93/instagram-bot/api"
+    "github.com/alirahmani93/instagram-bot/db"
     "github.com/joho/godotenv"
     "github.com/go-co-op/gocron"
     "time"
-    "github.com/ali93rahmani/instagram-bot/internal/instagram"
+    "github.com/alirahmani93/instagram-bot/internal/instagram"
 )
 
 // @title Instagram Bot API

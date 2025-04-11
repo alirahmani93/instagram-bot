@@ -1,4 +1,4 @@
-module github.com/ali93rahmani/instagram-bot
+module github.com/alirahmani93/instagram-bot
 
 go 1.20
 

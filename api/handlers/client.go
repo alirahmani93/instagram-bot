@@ -3,7 +3,7 @@ package handlers
 import (
     "net/http"
     "github.com/gin-gonic/gin"
-    "github.com/ali93rahmani/instagram-bot/db/models"
+    "github.com/alirahmani93/instagram-bot/db/models"
     "gorm.io/gorm"
 )
 

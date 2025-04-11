@@ -4,7 +4,7 @@ import (
     "encoding/json"
     "net/http"
     "io/ioutil"
-    "github.com/ali93rahmani/instagram-bot/db/models"
+    "github.com/alirahmani93/instagram-bot/db/models"
     "gorm.io/gorm"
 )
 
