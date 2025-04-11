@@ -1,0 +1,7 @@
+linters:
+  enable:
+    - gofmt
+    - golint
+    - errcheck
+    - vet
+    - staticcheck
